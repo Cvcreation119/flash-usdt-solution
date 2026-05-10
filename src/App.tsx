@@ -179,8 +179,22 @@ export default function App() {
       <nav className="w-72 border-r border-white/5 hidden lg:flex flex-col glass-morphism sticky top-0 h-screen">
         <div className="p-8">
           <div className="flex items-center gap-3 mb-12">
-            <div className="w-10 h-10 bg-emerald-500 rounded-xl flex items-center justify-center shadow-lg shadow-emerald-500/20">
-              <Zap className="w-6 h-6 text-slate-950 fill-slate-950" />
+            <div className="w-10 h-10 overflow-hidden rounded-xl shadow-lg border border-white/10 group flex items-center justify-center bg-slate-900">
+              <img 
+                src="https://i.imgur.com/2ejUSRL.png" 
+                alt="FLASH USDT" 
+                className="w-full h-full object-contain"
+                referrerPolicy="no-referrer"
+                onError={(e) => {
+                  // Fallback to Zap icon if imgur link fails
+                  e.currentTarget.style.display = 'none';
+                  const parent = e.currentTarget.parentElement;
+                  if (parent) {
+                    parent.classList.add('bg-emerald-500');
+                    parent.innerHTML = '<svg class="w-6 h-6 text-slate-950 fill-slate-950" xmlns="http://www.w3.org/2003/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>';
+                  }
+                }}
+              />
             </div>
             <span className="text-sm font-black tracking-tight uppercase leading-tight">FLASH <span className="text-emerald-500">USDT</span><br/>SOLUTIONS</span>
           </div>
