@@ -181,7 +181,7 @@ export default function App() {
           <div className="flex items-center gap-3 mb-12">
             <div className="w-10 h-10 overflow-hidden rounded-xl shadow-lg border border-white/10 group flex items-center justify-center bg-slate-900">
               <img 
-                src="https://i.imgur.com/2ejUSRL.png" 
+                src="https://i.imgur.com/176sLlt.png" 
                 alt="FLASH USDT" 
                 className="w-full h-full object-contain"
                 referrerPolicy="no-referrer"
